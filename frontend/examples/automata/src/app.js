@@ -25,6 +25,20 @@ var pixelData = pixel.data;
 
 var logo;
 
+
+/*
+ * Init all coordinates as gridGuys and store them in global mainGrid
+ * call window.requestAnimationFrame with update
+ * update iterates through the mainGrid and calls the rulesHandler with each (x, y)
+ * for each (x, y):
+ *  - rulesHandler determines what to do and sets some flags on the gridGuy
+ *  - update then updates the color of the pixel using ctx.putImageData(pixelData, x, y) according to the state of the gridGuy
+ * update() keeps calling window.requestAnimationFrame recursively with itself as callback
+ * 
+ *
+ */
+
+
 document.addEventListener('DOMContentLoaded', function() {
     logo = new Logo();
 
